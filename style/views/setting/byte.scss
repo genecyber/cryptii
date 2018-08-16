@@ -1,0 +1,10 @@
+
+.setting-byte {
+
+  &__input[type='text'] {
+    height: $setting-field-height;
+    padding: $setting-field-padding-v $setting-padding-h;
+    border: none;
+    @extend %t-setting-value;
+  }
+}

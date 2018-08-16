@@ -1,0 +1,86 @@
+
+.setting-number {
+
+  &__field {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  &__value {
+    display: block;
+    position: relative;
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+
+  &__input {
+    border: none;
+    width: 100%;
+    height: $setting-field-height;
+    padding: 0;
+    text-align: center;
+    @extend %t-setting-value;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  &__input::-webkit-inner-spin-button,
+  &__input::-webkit-outer-spin-button {
+    // remove number input spinners
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &__btn-step-down,
+  &__btn-step-up {
+    display: block;
+    position: relative;
+    width: $setting-padding-h + 16px;
+    height: $setting-field-height;
+    border-radius: 12px;
+    font-size: 0;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: $setting-padding-h + 4px;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 2px;
+      background: $c-text-detail;
+    }
+
+    &:hover {
+
+      &::before,
+      &::after {
+        background: $c-primary;
+      }
+    }
+  }
+
+  &__btn-step-down {
+
+    &::before {
+      content: none;
+    }
+  }
+
+  &__btn-step-up {
+
+    &::before,
+    &::after {
+      left: 12px
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+}
